@@ -6,7 +6,7 @@ export const NewResultFetch = () => (dispatch) => {
         axios
           .get('http://storeapp.site/vietlott/api')
           .then(response => {
-            dispatch(actionSuccess(response.data.data.children));
+            dispatch(actionSuccess(response.data));
           })
           .catch(err => {
             dispatch(actionFail(err));

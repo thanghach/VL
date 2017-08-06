@@ -1,8 +1,6 @@
 const defaultState = {
   loading: false,
-  error: '',
-  num1: 0,
-  num2: 0
+  error: ''
 };
 
 export default (state = defaultState, action) => {
@@ -18,8 +16,13 @@ export default (state = defaultState, action) => {
             return {
                 ...state,
                 loading: false,
-                num1: '10',
-                num2: action.data[1].id
+                num1: action.data[1].num1,
+                num2: action.data[1].num2,
+                num3: action.data[1].num3,
+                num4: action.data[1].num4,
+                num5: action.data[1].num5,
+                num6: action.data[1].num6
+
             };
 
         case 'RESULT_FETCH_ERROR':
