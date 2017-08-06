@@ -9,7 +9,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import { Button, Ball } from './components/common';
-import { ResultFetch } from './actions';
+import { NewResultFetch } from './actions';
 
 class Main extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class Main extends Component {
     };
   }
   componentDidMount() {
-    this.props.ResultFetch();
+    this.props.NewResultFetch();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -46,7 +46,7 @@ class Main extends Component {
   render() {
     const { dataSource } = this.state;
     return (
-      <View style={{ flex: 1, marginTop: Platform.OS === "ios" ? 20 : 0 }}>
+      <View style={{ flex: 1, marginTop: Platform.OS === 'ios' ? 20 : 0 }}>
         <View style={styles.row}>
           <Button onPress={this.onPress.bind(this)}>Lấy số</Button>
           <Button onPress={this.onPress.bind(this)}>Lưu số</Button>
@@ -65,7 +65,7 @@ class Main extends Component {
           renderRow={rowData => this.renderRow(rowData)}
         />
 
-        <Ball style={{ backgroundColor: "#000000" }}>02</Ball>
+        <Ball style={{ backgroundColor: '#000000' }}>{this.props.num1}</Ball>
       </View>
     );
   }
@@ -93,11 +93,10 @@ const styles = StyleSheet.create({
 
 
 function mapStateToProps(state) {
-    console.log(state.result);
     return {
         filterStatus: state.numbers.nums[0],
-        results: state.results
+        num1: state.newResults.num1
     };
 }
 
-export default connect(mapStateToProps, { ResultFetch })(Main);
+export default connect(mapStateToProps, { NewResultFetch })(Main);

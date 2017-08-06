@@ -1,26 +1,25 @@
 const defaultState = {
   loading: false,
   error: '',
-  data: [
-    { id: '1', name: 'teddy' },
-    { id: '2', name: 'john' },
-    { id: '3', name: 'mike' },
-    { id: '4', name: 'david' }
-
-  ]
+  num1: 0,
+  num2: 0
 };
 
 export default (state = defaultState, action) => {
     switch (action.type) {
-
-        case 'RESULT_FETCH_LOADING':
+        case 'NEW_RESULT_FETCH_LOADING':
+            
             return {
-                ...state, loading: true
+                ...state,
+                loading: true
             };
 
-        case 'RESULT_FETCH_SUCESSFULL':
+        case 'NEW_RESULT_FETCH_SUCESSFULL':
             return {
-                ...state, loading: false
+                ...state,
+                loading: false,
+                num1: '10',
+                num2: action.data[1].id
             };
 
         case 'RESULT_FETCH_ERROR':

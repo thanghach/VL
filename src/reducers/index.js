@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import Numbers from './NumbersReducer';
-import Result from './ResultReducer';
+import NewResults from './ResultsReducer';
 
 export default combineReducers({
     numbers: Numbers,
-    result: Result
+    newResults: NewResults
 });

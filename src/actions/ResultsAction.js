@@ -1,15 +1,16 @@
 import axios from 'axios';
 
-export const ResultFetch = () => (dispatch) => {
+export const NewResultFetch = () => (dispatch) => {
         // axios.get('http://storeapp.site/vietlott/api')
         dispatch(actionPending());
-        axios.get('https://www.reddit.com/r/reactjs.json')
-            .then((response) => {
-                dispatch(actionSuccess(response.data.data.children));
-            })
-            .catch((err) => {
-                dispatch(actionFail(err));
-            });
+        axios
+          .get('http://storeapp.site/vietlott/api')
+          .then(response => {
+            dispatch(actionSuccess(response.data.data.children));
+          })
+          .catch(err => {
+            dispatch(actionFail(err));
+          });
     }
             // fetch('https://jsonplaceholder.typicode.com/posts')
             // .then((response) => {
@@ -32,8 +33,8 @@ export const actionPending = () => ({
 });
 
 export const actionSuccess = (data) => ({
-    type: 'RESULT_FETCH_SUCESSFULL',
-    payload: data
+    type: 'NEW_RESULT_FETCH_SUCESSFULL',
+    data
 });
 
 export const actionFail = (error) => ({
