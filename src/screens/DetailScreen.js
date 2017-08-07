@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 import { View, Text,Button, Platform } from 'react-native';
 
 class DetailScreen extends Component {
-  static navigationOptions = ({navigation}) => ({
-    title: `${navigation.state.params.username}`,
-    header: null,
-    headerRight: <Button title="Info" />
-  })
+  // static navigationOptions = ({navigation}) => ({
+  //   title: `${navigation.state.params.username}`,
+  //   header: null,
+  //   headerRight: <Button title="Info" />
+  // })
 
   render() {
     const { params } = this.props.navigation.state;
@@ -16,14 +16,9 @@ class DetailScreen extends Component {
       <View style={{ flex: 1, marginTop: Platform.OS === "ios" ? 20 : 0 }}>
         <View>
           <Text>
-            {params.username}
+            
           </Text>
-          <Button
-            title="Back"
-            onPress={() => {
-              goBack();
-            }}
-          />
+
         </View>
       </View>
     );

@@ -3,11 +3,15 @@ import React, { Component } from 'react';
 
 import HomeScreen from './screens/HomeSreen';
 import DetailScreen from './screens/DetailScreen';
-import { StackNavigator } from "react-navigation";
+import { StackNavigator, TabNavigator } from "react-navigation";
 
-const Main = StackNavigator({
-  Home: { screen: HomeScreen },
-  Details: {screen: DetailScreen}
-});
+const Main = TabNavigator(
+  {
+    Home: { screen: HomeScreen },
+    Details: { screen: DetailScreen },
+    Detailsa: { screen: DetailScreen }
+  },
+  { scrollEnabled: true }
+);
 
 export default Main;
