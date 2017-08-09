@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
-import Main from './Main';
+// import Route from './Route';
+import Main from './Main.bk';
 import Reducers from './reducers';
 
 class App extends Component {
